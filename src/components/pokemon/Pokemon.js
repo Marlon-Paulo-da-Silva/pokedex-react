@@ -123,13 +123,14 @@ export default class Pokemon extends Component {
             const hatchSteps = 255 * (res.data['hatch_counter'] + 1);
 
 
-            this.setState(
+            this.setState({
                 description,
                 genderRatioFemale,
                 genderRatioMale,
                 catchRate,
                 eggGroups,
                 hatchSteps
+            }
             );
 
 
