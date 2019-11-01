@@ -14,7 +14,7 @@ export default class Pokemon extends Component {
             attack: "",
             defense: "",
             speed: "",
-            specialAtack: "",
+            specialAttack: "",
             specialDefense: ""
         },
         height: "",
@@ -62,6 +62,7 @@ export default class Pokemon extends Component {
                 case 'special-attack':
                         specialAttack = stat['base_stat'];
                     break;
+
                 case 'special-defense':
                     specialDefense = stat['base_stat'];
                     break;
@@ -130,10 +131,26 @@ export default class Pokemon extends Component {
                 catchRate,
                 eggGroups,
                 hatchSteps
-            }
-            );
+            });
+        });
 
-
+        this.setState({
+            imageUrl,
+            pokemonIndex,
+            name,
+            types,
+            stats: {
+                hp,
+            attack,
+            defense,
+            speed,
+            specialAttack,
+            specialDefense,
+            },
+            height,
+            weight,
+            abilities,
+            evs
         });
     }
 
