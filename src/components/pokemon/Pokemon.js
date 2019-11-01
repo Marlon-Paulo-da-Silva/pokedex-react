@@ -104,7 +104,7 @@ export default class Pokemon extends Component {
             return ability.ability.name.toLowerCase()
             .split("-")
             .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-            .join(" ");
+            .join(", ");
         });
 
         const evs = pokemonRes.data.stats.filter(stat => {
@@ -369,7 +369,7 @@ export default class Pokemon extends Component {
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                             >
-                                                <small>{this.state.genderRatioFemale}</small>
+                                                <small>{this.state.genderRatioFemale}%</small>
                                             </div>
                                             <div
                                             className="progress-bar"
@@ -382,7 +382,7 @@ export default class Pokemon extends Component {
                                             aria-valuemin="0"
                                             aria-valuemax="100"
                                             >
-                                                <small>{this.state.genderRatioMale}</small>
+                                                <small>{this.state.genderRatioMale}%</small>
                                             </div>
 
 
