@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 import styled from 'styled-components';
 
@@ -50,38 +50,40 @@ export default class PokemonCard extends Component {
 
         return (
             <div className="col-md-3 col-sm-6 mb-5">
-                <Card className="card">
-                        <h5 className="card-header">{this.state.pokemonIndex}</h5>
-                        { this.state.imageLoading ? (
-                            <img src={spinner} style={{width: '4em', height: '4em'}} className="card-img-top rounded mx-auto d-block mt-2" alt=""/>
-                        ) : null}
-                        <Sprite
-                            className="card-img-top rounded mx-auto mt-2"
-                            src={this.state.imageUrl}
-                            onLoad={() => this.setState({imageLoading: false})}
-                            onError={() => this.setState({toManyRequests: true})}
-                            style = {
-                                this.state.toManyRequests ? {display: "none"} :
-                                this.state.imageLoading ? null : {display: "block"}
-                            }>
-                        </Sprite>
-                        { this.state.toManyRequests ? (
-                            <h6 className="mx-auto">
-                                <span className="badge badge-danger mt-2">Muitas Requisições</span>
-                            </h6>
-                        ) : null}
-                        <div className="card-body mx-auto" >
-                            <h6 className="card-title" >
-                                {this.state.name
-                                .toLowerCase()
-                                .split(' ')
-                                .map(
-                                    letra => letra.charAt(0).toUpperCase() + letra.substring(1)
-                                )
-                                .join(' ')}
-                            </h6>
-                        </div>
-                </Card>
+                <Link to={`pokemon/${this.state.pokemonIndex}`}>
+                    <Card className="card">
+                            <h5 className="card-header">{this.state.pokemonIndex}</h5>
+                            { this.state.imageLoading ? (
+                                <img src={spinner} style={{width: '4em', height: '4em'}} className="card-img-top rounded mx-auto d-block mt-2" alt=""/>
+                            ) : null}
+                            <Sprite
+                                className="card-img-top rounded mx-auto mt-2"
+                                src={this.state.imageUrl}
+                                onLoad={() => this.setState({imageLoading: false})}
+                                onError={() => this.setState({toManyRequests: true})}
+                                style = {
+                                    this.state.toManyRequests ? {display: "none"} :
+                                    this.state.imageLoading ? null : {display: "block"}
+                                }>
+                            </Sprite>
+                            { this.state.toManyRequests ? (
+                                <h6 className="mx-auto">
+                                    <span className="badge badge-danger mt-2">Muitas Requisições</span>
+                                </h6>
+                            ) : null}
+                            <div className="card-body mx-auto" >
+                                <h6 className="card-title" >
+                                    {this.state.name
+                                    .toLowerCase()
+                                    .split(' ')
+                                    .map(
+                                        letra => letra.charAt(0).toUpperCase() + letra.substring(1)
+                                    )
+                                    .join(' ')}
+                                </h6>
+                            </div>
+                    </Card>
+                </Link>
             </div>
         )
     }
