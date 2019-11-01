@@ -202,7 +202,42 @@ export default class Pokemon extends Component {
                             </div>
                         </div>
                     </div>
+                    <div className="card-body">
+                        <div className="row align-items-center">
+                            <div className="col-md-3">
+                                <img src={this.state.imageUrl} alt=""
+                                    className="card-img-top rounded mx-auto mt-2"
+                                />
+                            </div>
+                            <div className="col-md-9">
+                               <h4 className="mx-auto">
+                                   {this.state.name.toLowerCase()
+                                                    .split(" ")
+                                                    .map(s => s.charAt(0)
+                                                                .toUpperCase() + s.substring(1))
+                                                    .join(" ") }
+                               </h4>
+                               <div className="row align-items center">
+                                    <div className="col-12 col-md">HP</div>
+                                    <div className="col-12 col-md-9">
+                                        <div className="progress">
+                                            <div className="progress-bar"
+                                                role="progressBar"
+                                                style={{
+                                                    width: `${this.state.stats.hp}%`
+                                                }}
+                                                aria-valuenow="25"
+                                                aria-valuemin="0"
+                                                aria-valuemax="100"
+                                                ><small>{this.state.stats.hp}%</small></div>
+                                        </div>
+                                    </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         )
     }
