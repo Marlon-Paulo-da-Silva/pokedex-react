@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const TYPE_COLORS = {
@@ -424,6 +425,9 @@ export default class Pokemon extends Component {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className="row">
+                            <Link to="/" className="btn btn-primary">Voltar</Link>
                         </div>
                     </div>
                  <div className="card-footer text-muted">
