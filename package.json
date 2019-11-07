@@ -2,15 +2,9 @@
   "name": "pokedex",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "12.10.0"
-  },
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
-    "express": "^4.17.1",
-    "express-favicon": "^2.0.1",
-    "path": "^0.12.7",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
